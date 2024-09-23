@@ -12,8 +12,7 @@
 int main(int argc, char **argv)
 {
     printf("\nBase de projet BUT GEII - Module Info1\n\n");
-    
-    /* environnement */ /* rôle des objets */
+        /* environnement */ /* rôle des objets */
     int userNumber;     /* Integer given by user*/
     int sum;            /* Sum of all inferior numbers*/
     int i;
@@ -33,7 +32,6 @@ int main(int argc, char **argv)
         printf("\nLa somme des %d entiers pair vaut : %d\n",userNumber, peerSum(userNumber));
     } else if(typeOfSum == 3) {
         printf("\nLa somme des %d entiers impair vaut : %d\n",userNumber, oddSum(userNumber));
-    };
-    
+    };   
     return 0;
 }
