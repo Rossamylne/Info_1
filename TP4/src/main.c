@@ -17,7 +17,10 @@ int main(int argc, char **argv)
     int sum;            /* Sum of all inferior numbers*/
     int i;
     int typeOfSum;
-    do {
+    int retry = 0;
+    bool launcher = true;
+    while(launcher) {
+        do {
         printf("Value of the N integer:\n");
         scanf("%d", &userNumber);
     } while(userNumber  <= 0);
@@ -32,6 +35,10 @@ int main(int argc, char **argv)
         printf("\nLa somme des %d entiers pair vaut : %d\n",userNumber, peerSum(userNumber));
     } else if(typeOfSum == 3) {
         printf("\nLa somme des %d entiers impair vaut : %d\n",userNumber, oddSum(userNumber));
-    };   
+    };
+    printf("Retry ?\n0 : don't retry\n1 : retry\n");
+    scanf("%d", &retry);
+    (retry == 0)? launcher = false : launcher;
+    };
     return 0;
 }
