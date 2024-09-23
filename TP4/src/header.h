@@ -16,6 +16,7 @@ int peerSum(int n) {
     int i;
     for(i = 1; i <= n; i++) {
         if(i % 2 == 0){
+            printf("%d + ", i);
             sum = sum + i;
         }
     };
@@ -27,6 +28,7 @@ int oddSum(int n) {
     int i;
     for(i = 1; i <= n; i++) {
         if(i % 2 == 1){
+            printf("%d + ", i);
             sum = sum + i;
         }
     };

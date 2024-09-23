@@ -22,8 +22,11 @@ int main(int argc, char **argv)
         printf("Value of the N integer:\n");
         scanf("%d", &userNumber);
     } while(userNumber  <= 0);
-    printf("\n1 : sum of all integers\n2 : sum of peer integer\n3 : sum of odd integer\nType of sum :");
-    scanf("%d", &typeOfSum); /* 1 : All Integers */      /* 2 : Peer */       /* 3 : Odd */
+    do {
+        printf("\n1 : sum of all integers\n2 : sum of peer integer\n3 : sum of odd integer\nType of sum :");
+        scanf("%d", &typeOfSum); /* 1 : All Integers */      /* 2 : Peer */       /* 3 : Odd */
+    } while(typeOfSum < 1 || typeOfSum > 3);
+    
     if(typeOfSum == 1){
         printf("\nLa somme des %d entiers vaut : %d\n",userNumber, allIntegersSum(userNumber));
     } else if(typeOfSum == 2) {
