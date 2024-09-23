@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     do {
         printf("Value of the N integer:\n");
         scanf("%d", &userNumber);
-    } while(userNumber  <= 0 && typeof(userNumber) != int);
+    } while(userNumber  <= 0);
     printf("\n1 : sum of all integers\n2 : sum of peer integer\n3 : sum of odd integer\nType of sum :");
     sum = 0;
     for(i = 1; i <= userNumber; i++){
