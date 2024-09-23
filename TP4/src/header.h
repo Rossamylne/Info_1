@@ -1,5 +1,5 @@
 /* Function prototype */
-
+int allIntegersSum(int n);
 
 
 int allIntegersSum(int n) {
@@ -16,10 +16,10 @@ int peerSum(int n) {
     int i;
     for(i = 1; i <= n; i++) {
         if(i % 2 == 0){
-            printf(i);
             sum = sum + i;
         }
     };
+    return sum;
 };
 
 int oddSum(int n) {
@@ -27,9 +27,9 @@ int oddSum(int n) {
     int i;
     for(i = 1; i <= n; i++) {
         if(i % 2 == 1){
-            printf(i);
             sum = sum + i;
         }
     };
+    return sum;
 }
 
