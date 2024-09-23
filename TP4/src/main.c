@@ -6,13 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-
+#include "header.h"
 #include "main.h"
-
-/* Function prototype */
-int allIntegersSum(int n) ;
-int peerSum(int n) ;
-int oddSum(int n) ;
 
 int main(int argc, char **argv)
 {
@@ -28,10 +23,14 @@ int main(int argc, char **argv)
         scanf("%d", &userNumber);
     } while(userNumber  <= 0);
     printf("\n1 : sum of all integers\n2 : sum of peer integer\n3 : sum of odd integer\nType of sum :");
-    sum = 0;
-    for(i = 1; i <= userNumber; i++){
-        sum = sum + i;
-    }
-    printf("\nLa somme des %d entiers vaut : %d\n",userNumber,sum);
+    scanf("%d", &typeOfSum); /* 1 : All Integers */      /* 2 : Peer */       /* 3 : Odd */
+    if(typeOfSum == 1){
+        printf("\nLa somme des %d entiers vaut : %d\n",userNumber, allIntegersSum(userNumber));
+    } else if(typeOfSum == 2) {
+        printf("\nLa somme des %d entiers pair vaut : %d\n",userNumber, peerSum(userNumber));
+    } else if(typeOfSum == 3) {
+        printf("\nLa somme des %d entiers impair vaut : %d\n",userNumber, oddSum(userNumber));
+    };
+    
     return 0;
 }
