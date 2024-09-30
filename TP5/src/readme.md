@@ -1,6 +1,6 @@
 
-# Sum calculator in c
-*Calculate different type of sum (full, peer, odd) from number chose by user*
+# Test palindrome
+*Test if a word is a palindrome*
 ---
 **Developed within [Nantes Université](https://www.univ-nantes.fr/)**
 
