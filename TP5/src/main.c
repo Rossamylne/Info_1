@@ -22,12 +22,15 @@ int main(int argc, char **argv)
     printf("\nType chain of characters (press Enter to finish): ");
     do {
         car = getchar();
-        if ((car != CAR_FIN) && (car != ' ') && (nbCar < NB_MAX)) {
+        if((car != CAR_FIN) && (car != ' ') && (nbCar < NB_MAX)) {
+            if(nbCar<=40) {
             word[nbCar] = car;
             nbCar = nbCar + 1;
+            }
+        else printf("Too much characters !!! \n");
         }
-    } while (car != CAR_FIN);
-    for (i = 0; i < nbCar; i++) {
+    }while(car != CAR_FIN);
+    for(i = 0; i < nbCar; i++) {
         reverseWord[i] = word[nbCar - 1 - i];
     }
     printf("\nCharacters in reverse order: ");
@@ -35,16 +38,16 @@ int main(int argc, char **argv)
         printf("%c", reverseWord[i]);
     }
     printf("\nIndexes of characters: ");
-    for (i = 0; i < nbCar; i++) {
+    for(i = 0; i < nbCar; i++) {
         printf("%d ", i);
     }
-    for (i = 0; i < nbCar; i++) {
+    for(i = 0; i < nbCar; i++) {
         if (word[i] != reverseWord[i]) {
             areCharSame = false;
             break;
         }
     }
-    switch (areCharSame) {
+    switch(areCharSame) {
         case true:
             printf("\nThe word \"%s\" is a palindrome\n", word);
             break;
