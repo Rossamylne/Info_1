@@ -23,16 +23,14 @@ int main(int argc, char **argv)
     do {
         car = getchar();
         if((car != CAR_FIN) && (car != ' ') && (nbCar < NB_MAX)) {
-            if(nbCar<=40) {
             word[nbCar] = car;
             nbCar = nbCar + 1;
-            }
-        else printf("Too much characters !!! \n");
         }
     }while(car != CAR_FIN);
     for(i = 0; i < nbCar; i++) {
-        reverseWord[i] = word[nbCar - 1 - i];
+        reverseWord[i] = word[i];
     }
+    /*
     printf("\nCharacters in reverse order: ");
     for(i = 0; i < nbCar; i++) {
         printf("%c", reverseWord[i]);
@@ -41,6 +39,7 @@ int main(int argc, char **argv)
     for(i = 0; i < nbCar; i++) {
         printf("%d ", i);
     }
+    */
     for(i = 0; i < nbCar; i++) {
         if (word[i] != reverseWord[i]) {
             areCharSame = false;

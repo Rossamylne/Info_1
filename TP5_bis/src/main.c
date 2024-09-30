@@ -6,69 +6,92 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include <unistd.h>
 #include "header.h"
 #include "main.h"
+#define TAILLE_MAX 64
 
-#include <unistd.h>  // for getcwd()
-
-#define MAX_SIZE 100  // Define MAX_SIZE for reading from the file
 
 int main(int argc, char **argv)
 {
+    printf("\nBase de projet BUT GEII - Module Info1\n\n");
     int NB_MAX = 40;
     char CAR_FIN = '\n';
     int i, nbCar = 0;
     char word[NB_MAX], reverseWord[NB_MAX], car;
     bool areCharSame = true;
 
-    /* Open file */
-    FILE* myFile = NULL;
-    char sentence[MAX_SIZE];
-    myFile = fopen("./build/dictionnaire.txt", "r");
-    
-    if (myFile != NULL) {
-        // Read each line from the file
-        while(fgets(sentence, MAX_SIZE, myFile) != NULL) {
-            
-            // Tokenize the sentence into words
-            char *wordPtr = strtok(sentence, " \n");
-            while (wordPtr != NULL) {
-                // Copy the current word to the word array
-                strncpy(word, wordPtr, NB_MAX);
-                nbCar = strlen(word);
-                word[nbCar] = '\0';  // Ensure null termination
 
-                // Reverse the word
-                for (i = 0; i < nbCar; i++) {
-                    reverseWord[i] = word[nbCar - 1 - i];
-                }
-                reverseWord[nbCar] = '\0';  // Null-terminate the reversed word
-
-                // Check if the word is a palindrome
-                areCharSame = true;
-                for (i = 0; i < nbCar; i++) {
-                    if (word[i] != reverseWord[i]) {
-                        areCharSame = false;
-                        break;
-                    }
-                }
-
-                // Output result for the current word
-                if (areCharSame) {
-                    printf("The word \"%s\" is a palindrome\n", word);
-                } /*else {
-                    printf("The word \"%s\" is not a palindrome\n", word);
-                }
-                */
-                // Move to the next word in the sentence
-                wordPtr = strtok(NULL, " \n");
-            }
+    /*OPEN FILE*/
+    FILE* monFichier = NULL;
+    char phrase[TAILLE_MAX];
+    monFichier = fopen("./build/dictionnaire.txt","r");
+    if (monFichier != NULL) {
+        while ( fgets(phrase, TAILLE_MAX, monFichier) != NULL ) {
+        printf("phrase : %s \n", phrase);               /* UNFUNCTIONNAL*/
+        for(i=0;i<phrase;i++) {
+            word[i] = phrase[i];
         }
-        fclose(myFile);
-    } else {
-        printf("Dictionnaire.txt cannot be opened\n");
+        for(i = 0; i < nbCar; i++) {
+        reverseWord[i] = word[i];
+        }
+        for(i = 0; i < nbCar; i++) {
+        if (word[i] != reverseWord[i]) {
+            areCharSame = false;
+            break;
+        }
+        }
+        switch(areCharSame) {
+            case true:
+                printf("\nThe word \"%s\" is a palindrome\n", word);
+                break;
+
+            case false:
+                printf("\nThe word \"%s\" is not a palindrome\n", word);
+                break;
+
+            default:
+                printf("\nError\n");
+                break;
+        }
+        } 
+        fclose(monFichier);
+    }
+    else // message d'erreur
+    {
+    printf("Impossible d'ouvrir le fichier entree.txt \n");
     }
 
+
+    /* Algorithm */
+    for(i = 0; i < nbCar; i++) {
+        reverseWord[i] = word[i];
+    }
+    printf("\nCharacters in reverse order: ");
+    for(i = 0; i < nbCar; i++) {
+        printf("%c", reverseWord[i]);
+    }
+    printf("\nIndexes of characters: ");
+    for(i = 0; i < nbCar; i++) {
+        printf("%d ", i);
+    }
+    for(i = 0; i < nbCar; i++) {
+        if (word[i] != reverseWord[i]) {
+            areCharSame = false;
+            break;
+        }
+    }
+    switch(areCharSame) {
+        case true:
+            printf("\nThe word \"%s\" is a palindrome\n", word);
+            break;
+
+        case false:
+            printf("\nThe word \"%s\" is not a palindrome\n", word);
+            break;
+
+        default:
+            printf("\nError\n");
+            break;
+    }
     return 0;
 }
