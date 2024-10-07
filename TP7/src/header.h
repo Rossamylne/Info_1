@@ -5,11 +5,11 @@ int getArraySize(int iteration) {
     scanf("%d", &size);
     return size;
 }
-int getBiggestValueInArray(int array) {
-    int* p;
-    int* index = 0;
+int getBiggestValueInArray(int* array) {
+    int p;
+    int index = 0;
     int tmp = array[index];
-    for(p=1;p<strlen(array);p++) {
+    for(p=1;p<10;p++) {
         if(tmp<array[p]) {
             tmp = array[p];
         }
@@ -45,5 +45,4 @@ int testBiggestValue(int value1, int value2, int value3) {
     }
     return maxValue;
 }
-
 */

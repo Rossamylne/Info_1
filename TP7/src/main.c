@@ -9,6 +9,15 @@
 #include "header.h"
 #include "main.h"
 
+/**
+ * @file Main.c
+ * @brief Get biggest number
+ * @author Loris
+ * @date 07/10/2024
+ */
+
+
+
 int main(int argc, char **argv)
 {
         /* environnement */
@@ -16,10 +25,12 @@ int main(int argc, char **argv)
     int valueList[10];
     int i;
     /*Algorithm*/
+
+
     for(i=0;i<10;i++) {
         valueList[i] = getArraySize(i);
     }
-    printf("Biggest value is %d", getBiggestValueInArray(valueList));
+    printf("Biggest value is %d\n", getBiggestValueInArray(valueList));
     /*
     vA = getUserValue("A");
     vB = getUserValue("B");
