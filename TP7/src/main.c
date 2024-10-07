@@ -11,12 +11,20 @@
 
 int main(int argc, char **argv)
 {
-    printf("\nBase de projet BUT GEII - Module Info1\n\n");
-        /* environnement */ /* rôle des objets */
-    int vA, vB, vC;
+        /* environnement */
+    /*int vA, vB, vC;*/
+    int valueList[10];
+    int i;
+    /*Algorithm*/
+    for(i=0;i<10;i++) {
+        valueList[i] = getArraySize(i);
+    }
+    printf("Biggest value is %d", getBiggestValueInArray(valueList));
+    /*
     vA = getUserValue("A");
     vB = getUserValue("B");
     vC = getUserValue("C");
     printf("The biggest value is %d\n", testBiggestValue(vA, vB, vC));
+    */
     return 0;
 }

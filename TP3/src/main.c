@@ -11,7 +11,6 @@
 
 int main(int argc, char **argv)
 {
-    printf("\nBase de projet BUT GEII - Module Info1\n\n");
     
     /* environnement */ /* rôle des objets */
     char car;           // variable contenant le caractère courant

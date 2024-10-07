@@ -11,7 +11,6 @@
 
 int main(int argc, char **argv)
 {
-    printf("\nBase de projet BUT GEII - Module Info1\n\n");
         /* environnement */ /* rôle des objets */
     int userNumber;     /* Integer given by user*/
     int sum;            /* Sum of all inferior numbers*/

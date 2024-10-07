@@ -10,7 +10,6 @@
 
 int main(int argc, char **argv)
 {
-    printf("\nBase de projet BUT GEII - Module Info1\n\n");
     int NB_MAX = 40;
     char CAR_FIN = '\n';
     int i, nbCar = 0;

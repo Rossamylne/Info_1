@@ -1,4 +1,23 @@
 /* Function prototype */
+int getArraySize(int iteration) {
+    int size;
+    printf("\nNumber to test : ");
+    scanf("%d", &size);
+    return size;
+}
+int getBiggestValueInArray(int array) {
+    int* p;
+    int* index = 0;
+    int tmp = array[index];
+    for(p=1;p<strlen(array);p++) {
+        if(tmp<array[p]) {
+            tmp = array[p];
+        }
+    }
+    return tmp;
+}
+
+/*
 int getUserValue(char * expValue) {
     int userValue;
     printf("\nValue of %s : ", expValue);
@@ -26,3 +45,5 @@ int testBiggestValue(int value1, int value2, int value3) {
     }
     return maxValue;
 }
+
+*/
