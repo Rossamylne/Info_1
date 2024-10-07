@@ -5,8 +5,7 @@
 #endif
 #include <stdio.h>
 #include <string.h>
-#include <stdbool.h>
-#include "header.h"
+#include <stdbool.h>s
 #include "main.h"
 #define TAILLE_MAX 64
 

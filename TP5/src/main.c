@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include "header.h"
 #include "main.h"
 
 int main(int argc, char **argv)
