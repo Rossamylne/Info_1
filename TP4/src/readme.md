@@ -1,6 +1,6 @@
 
-# Sum calculator in c
-*Calculate different type of sum (full, peer, odd) from number chose by user*
+# Biggest Number
+*Find the biggest number in a list given by the user*
 ---
 **Developed within [Nantes Université](https://www.univ-nantes.fr/)**
 

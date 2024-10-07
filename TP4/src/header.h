@@ -1,6 +1,4 @@
 /* Function prototype */
-int allIntegersSum(int n);
-
 
 int allIntegersSum(int n) {
     int sum = 0;
