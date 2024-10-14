@@ -25,12 +25,13 @@ int main()
     {
         printf("\n1 Test acquerirCle(min,max)\n");
         printf("\n2 Test ChiffrerMin(char car,int cle)\n");
-
+        printf("\n3 Test ChiffrerMaj(char car,int cle)\n");
         printf("\nChoix? ('q' pour quitter)");
         if((choix = getche()) == '\n') choix = getche();
 
         if(choix == '1') testAcquerirCle();
         if(choix == '2') testChiffrerMin();
+        if(choix == '3') testChiffrerMaj();
     }while(choix!='q');
     printf("\n");
 }
@@ -53,7 +54,7 @@ void testChiffrerMin()
 
     printf("\nChiffrage sans repliement - car='g', cle=10 \n");
     resultat = chiffrerMin('g', 10);
-    if (resultat == 'p')
+    if (resultat == 'q')
         printf("Resultat %c - test OK\n", resultat);
     else
         printf("Resultat %c - test KO\n", resultat);
@@ -64,4 +65,23 @@ void testChiffrerMin()
         printf("Resultat %c - test OK\n", resultat);
     else
         printf("Resultat %c - test KO\n", resultat);
+}
+
+void testChiffrerMaj()
+{
+    char resultatn;
+
+    printf("\nChiffrage sans repliement - car='G', cle=10 \n");
+    resultatn = chiffrerMaj('G', 10);
+    if (resultatn == 'Q')
+        printf("Resultat %c - test OK\n", resultatn);
+    else
+        printf("Resultat %c - test KO\n", resultatn);
+
+    printf("\nChiffrage avec repliement - car='O', cle=15 \n");
+    resultatn = chiffrerMaj('O', 15);
+    if (resultatn == 'D')
+        printf("Resultat %c - test OK\n", resultatn);
+    else
+        printf("Resultat %c - test KO\n", resultatn);
 }

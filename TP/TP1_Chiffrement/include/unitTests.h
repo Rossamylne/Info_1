@@ -3,5 +3,6 @@
 
 void testAcquerirCle();
 void testChiffrerMin();
+void testChiffrerMaj();
 
 #endif //UNITTESTS_H_

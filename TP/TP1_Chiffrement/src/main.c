@@ -38,8 +38,9 @@ int main()
             unCarChiffre = chiffrerCar(unCar, laCle);
             unCarDechiffre = dechiffrerCar(unCarChiffre, laCle);
             printf("\n%c \t| %c \t| %c", unCar, unCarChiffre, unCarDechiffre);
+            printf("%d", nbCar);
         }
-    } while ((unCar != '.') || (nbCar < MAX_NB_CAR));
+    } while((unCar != '.') && (nbCar < MAX_NB_CAR));
 
     printf("\nAppuyer sur une touche pour terminer...");
     getch();
