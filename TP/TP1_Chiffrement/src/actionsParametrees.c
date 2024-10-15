@@ -13,12 +13,10 @@
 int acquerirCle(int min, int max)
 {
     int valLue;
-    printf("\nQuelle valeur pour la cle (entre %d et %d) ? : ", min, max);
-    scanf("%d", &valLue);
-    if ((valLue < min) || (valLue > max))
-    {
-        printf("\nERREUR !!!");
-    }
+    do {
+        printf("\nQuelle valeur pour la cle (entre %d et %d) ? : ", min, max);
+        scanf("%d", &valLue);
+    } while((valLue < min) || (valLue > max));
     return valLue;
 }
 
@@ -53,9 +51,13 @@ char chiffrerCar(char car, int cle)
  */
 char chiffrerMaj(char car, int cle)
 {
+    char carCalculate = car + cle;
     // première stragéie de codage : on calcule directement le nouveau caractère. 
     // Si vous faîtes des corrections, conservez le principe de ce calcul direct
-    return ((car - 'A') + cle) + 'A';
+    if(carCalculate > 'Z') {
+        carCalculate = carCalculate - 26;
+    }
+    return carCalculate;
 }
 
 /**
@@ -71,7 +73,7 @@ char chiffrerMin(char car, int cle)
     char carCalcule = car;
     // alternative correcte : utiliser une boucle pour compter les caractères
     // Si vous faîtes des corrections, conservez le principe de cette solution avec une boucle
-    for (i = 1; i < cle; i++)
+    for (i = 0; i < cle; i++)
     {
         if (carCalcule == 'z')
         {
@@ -94,7 +96,20 @@ char chiffrerMin(char car, int cle)
  */
 char dechiffrerCar(char car, int cle)
 {
-    // A faire dans la partie 6 ! 
-    // en attendant, on renvoie toujours un espace
-    return ' ';
+    int i;
+    char carCalcule = car;
+    // alternative correcte : utiliser une boucle pour compter les caractères
+    // Si vous faîtes des corrections, conservez le principe de cette solution avec une boucle
+    for (i = 0; i < -cle-NB_CAR_SPE; i++)
+    {
+        if (carCalcule == 'z')
+        {
+            carCalcule = 'a';
+        }
+        else
+        {
+            carCalcule = carCalcule - 1;
+        }
+    }
+    return carCalcule;
 }
