@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "IHM_Application.h": "c",
+        "sdl.h": "c",
+        "ftheader.h": "c",
+        "ft2build.h": "c",
+        "freetype.h": "c",
+        "jeu.h": "c",
+        "ihm_gridPanel.h": "c",
+        "ihm_button.h": "c"
+    },
+    "terminal.integrated.env.linux": {
+        
+        "LD_PRELOAD": null,
+    },
+    "makefile.configurations": [
+        {
+            "name": "Default",
+            "makeArgs": ["--no-silent"]
+        },
+    ],
+    "makefile.launchConfigurations": [
+        
+    ]
+}
