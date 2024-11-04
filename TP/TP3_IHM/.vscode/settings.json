@@ -8,7 +8,8 @@
         "freetype.h": "c",
         "jeu.h": "c",
         "ihm_gridPanel.h": "c",
-        "ihm_button.h": "c"
+        "ihm_button.h": "c",
+        "main.h": "c"
     },
     "terminal.integrated.env.linux": {
         
