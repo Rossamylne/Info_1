@@ -37,7 +37,7 @@ int getIndiceCouleur(int x, int nbCouleurs){
     int coul, w, h;
     getWindowSize(&w, &h);
     if(h-10){
-        coul = x % (w/nbCouleurs);
+        coul = x / (w/nbCouleurs);
     }
     return coul;
 }

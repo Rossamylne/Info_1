@@ -11,7 +11,6 @@
 #include "IHM_Setup.h"
 #include "actionsParametrees.h"
 #include "main.h"
-#define NB_COUL = 5;
 int main(int argc, char **argv)
 {
     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,12 +24,11 @@ int main(int argc, char **argv)
 
     // Mon environnement ici ////////////////////////////
 
-    int xTrain, Ytrain;             /* Position du train */
-    int xClic, yClic, btnClick;     /* Position du dernier clic */
-    long unsigned int mapalette[5];               /* Palette de couleur */
-    char keyPressed;                /* Dernier caractère tapé */
-    int railsVisibles = 0;          /* Si vrai afficher les rails */
-    int trainVisible = 0;           /* Si vrai afficher le train */
+    int xClic, yClic;                               /* Position du dernier clic */
+    long unsigned int mapalette[5];                 /* Palette de couleur */
+    char keyPressed;                                /* Dernier caractère tapé */
+    int railsVisibles = 0;                          /* Si vrai afficher les rails */
+    int trainVisible = 0;                           /* Si vrai afficher le train */
     int xSouris = 0;
     int ySouris = 0;
     int carreVisible = 0;
@@ -54,7 +52,6 @@ int main(int argc, char **argv)
         if(carreVisible == 1) dessineRectanglePlein(xSouris,ySouris,40,40, IHM_Window_couleur(255,0,0));
         if(railsVisibles) afficheRails(xSouris,ySouris);
         if(trainVisible) afficheTrain(xSouris,ySouris, mapalette[getIndiceCouleur(xClic, 5)]);
-        printf("%d", mapalette[getIndiceCouleur(xClic, 5)]);
         affichePalette(mapalette, 5);
         //Fin de mon code ////////////////////////////////////////
 
@@ -66,4 +63,3 @@ int main(int argc, char **argv)
     IHM_Application_destroy(&application);
     return 0;
 }
- 
