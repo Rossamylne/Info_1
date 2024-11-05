@@ -5,4 +5,4 @@
 **Developed within [Nantes Université](https://www.univ-nantes.fr/)**
 
 ---
-![Nantes Université](../obj/Nantes-univ-Logo.png)
+![Nantes Université](/obj/Nantes-univ-Logo.png)
