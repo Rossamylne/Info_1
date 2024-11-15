@@ -8,7 +8,7 @@
 
 #define EPAISSEUR_CADRE 2
 #define HAUTEUR_ORDONNEE 300
-#define LONGUEUR_ABSCISSE 200
+#define LONGUEUR_ABSCISSE 400
 #define NB_MAX_LECTURE 300
 
 #define ROUGE IHM_Window_couleur(255, 0, 0)

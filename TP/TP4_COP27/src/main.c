@@ -36,12 +36,12 @@ int main(int argc, char **argv)
     int tabAnnee[NB_MAX_LECTURE];
     int tabAff[LONGUEUR_ABSCISSE];
     // nombre de valeurs lues
-    int nbValLues;
+    int nbValLues = 0;
     // début et fin de l'interval affiché
     int i_deb;
     int i_fin;
-
-
+    int w,h;
+    lirePoints("CO2_france.csv", tabCO2, tabAnnee, &nbValLues);
     do
     {
         // Effacement de l'interface
@@ -60,8 +60,8 @@ int main(int argc, char **argv)
         
         // Création des objets graphiques dans l'application
         if (carreVisible == 1) dessineRectanglePlein(xSouris,ySouris,40,40, IHM_Window_couleur(255,0,0));
-
-        afficheCadre(HAUTEUR_ORDONNEE, LONGUEUR_ABSCISSE);
+        getWindowSize(&w, &h);
+        afficheCadre(w, h);
 
         //Fin de mon code ////////////////////////////////////////
         // Affichage des objets dans la fenêtre de l'IHM
