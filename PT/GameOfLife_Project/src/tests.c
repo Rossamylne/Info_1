@@ -24,7 +24,6 @@ int main()
     do
     {
         printf("\n1 Test Témoin");
-
         printf("\nChoix? ('q' pour quitter)");
         if((choix = getche()) == '\n') choix = getche();
 
