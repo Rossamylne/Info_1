@@ -70,7 +70,7 @@ int main(int argc, char **argv)
         }
 
         // Création des objets graphiques dans l'application (grille, points ...)
-
+        dessineGrille();
         //Fin de mon code ////////////////////////////////////////
         // Affichage des objets dans la fenêtre de l'IHM
         IHM_Application_drawWindows(&application);
