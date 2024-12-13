@@ -32,12 +32,40 @@ void dessineGrille(int height, int width, int case_h, int case_w)
     }
 }
 
-void placePoint(int pos_y, int pos_x, int case_h, int case_w)
+void placePoint(int pos_y, int pos_x, int case_h, int case_w, int green, int blue)
 {
-    dessineRectanglePlein(pos_x, pos_y, case_h, case_w, IHM_Window_couleur(255,0,0));
+    int h, w;
+    getWindowSize(&h,&w);
+    pos_x = pos_x*h/80;
+    pos_y = pos_y*w/80;
+    dessineRectanglePlein(pos_x, pos_y, case_h, case_w, IHM_Window_couleur(255,green,blue));
 }
 
 void placeCellules(terrain_t *monTerrain)
 {
+    int y;
+    int x;
+    int w,h;
+    getWindowSize(&w, &h);
+    int case_width = (w-10) / 80;
+    int case_height = (h - 90) / 80;
+    int caseCheck;
+    int gLevel; //valeur de couleur vert pour les cellules
+    int bLevel; //valeur de couleur bleu pour les cellules
 
+    for (x = 0; x <= 80; x++) //Scan incrémentation axe Y
+        {
+            for (y = 0; y <= 80; y++) //scan incrémentation X
+            {
+                //récupérer état puis injecter dans variable caseCheck
+                caseCheck = getPresent (monTerrain, x, y);
+                if (caseCheck > 0) //Si état vivant coordonnées -> case rouge
+                {
+                    gLevel = bLevel = 0;
+                }else{ //Sinon coordonnées -> case blanche
+                    gLevel = bLevel = 255;
+                }
+        placePoint(y, x, case_height, case_width, gLevel, bLevel);
+        }
+}
 }
