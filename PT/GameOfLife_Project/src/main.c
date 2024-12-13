@@ -30,12 +30,20 @@ int main(int argc, char **argv)
     int xSouris = 0;
     int ySouris = 0;
     char keyPressed = 0;
+    int caseCheck = 0;
 
     terrain_t monTerrain;
     int generation = 0;
     int population = 0;
     int run = 0;
     double pasTemporel = TIMESTEP;
+
+    int w,h;
+    getWindowSize(&w, &h);
+    int case_width = (w-10) / 80;
+    int case_height = (h - 90) / 80;
+    int gLevel;
+    int bLevel;
 
     razTerrain(&monTerrain);
 
@@ -70,7 +78,9 @@ int main(int argc, char **argv)
         }
 
         // Création des objets graphiques dans l'application (grille, points ...)
-        dessineGrille();
+        dessineGrille(h, w, case_height, case_width);
+        gLevel = bLevel = 0;
+        placePoint(h, w, case_height, case_width);
         //Fin de mon code ////////////////////////////////////////
         // Affichage des objets dans la fenêtre de l'IHM
         IHM_Application_drawWindows(&application);
@@ -78,6 +88,25 @@ int main(int argc, char **argv)
 
     } while (!application.quitter); //On quitte soit par la touche ESC, soit par la fermeture de la fenêtre
     // fin de la boucle principale
+/**
+    for () //Scan incrémentation axe Y
+    {
+        for () //scan incrémentation X
+        {
+            //récupérer état puis injecter dans variable caseCheck
+            caseCheck = ;
+            if (caseCheck > 0) //Si état vivant coordonnées -> case rouge
+            {
+
+            }else{ //Sinon coordonnées -> case blanche
+
+            }
+            
+        }
+        
+    }
+ */    
+
     IHM_Application_destroy(&application);
     return 0;
 }

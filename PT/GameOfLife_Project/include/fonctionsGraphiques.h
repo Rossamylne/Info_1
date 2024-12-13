@@ -11,8 +11,8 @@
 
 /* Mettre les commentaires doxigen */
 
-void dessineGrille(void);
-void placePoint(int x, int y);
 void placeCellules(terrain_t *monTerrain);
+void placePoint(int pos_y, int pos_x, int case_h, int case_w);
+void dessineGrille(int h, int w, int case_height, int case_width);
 
 #endif //FONCTIONSGRAPHIQUES_H_
